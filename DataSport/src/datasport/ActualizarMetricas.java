@@ -45,7 +45,7 @@ public class ActualizarMetricas implements Runnable {
 
     public void calculos(int tiempo) {
         programa.calcularCal(intervaloCalculoCalorias);
-        programa.calcularKm(tiempo);
+        programa.calcularKm();
         programa.calcularVuelta();
 
     }

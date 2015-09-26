@@ -28,7 +28,7 @@ public class DataSport {
      */
 
     private float vel, inc, cal, calAcum, K, distanciaAcum, peso;
-    private int vuelta, modo, distVuelta,edad;
+    private int vuelta, modo, distVuelta, edad;
     //private int intervalo
     private Programa progPrest;
     private DecimalFormatSymbols simbolos;                                         //Para colocar el simbolo de "." a cal y km
@@ -114,7 +114,7 @@ public class DataSport {
     public void aumentar(JLabel etiqueta, float limSup, float limInf, float var,
             int idAtributo) {
         double x = Float.parseFloat(etiqueta.getText());
-        
+
         if (idAtributo == 0) {
             if ((x < limInf)) {
                 if (x < 10) {
@@ -274,13 +274,6 @@ public class DataSport {
         return calorias;
     }
 
-    public String getDistAcumString() {
-        DecimalFormat formateador = new DecimalFormat(" 00.00", simbolos);          //Formateo lo que muestro en pantalla
-        String kms = "      " + formateador.format(distanciaAcum);
-        return kms;
-
-    }
-
     public String getVueltaString() {
         String sV = "" + vuelta;
         return sV;
@@ -314,18 +307,25 @@ public class DataSport {
 
         return cal;
 
-        
-    }
-    private float calcularK(int edad, float peso){
-         K = 10 + 10*((30-edad)/10) + 10*(peso/100);                               //  Por si necesita modificar   las calorías deben ser calculadas
-         K=10;
-         return K;
-        
     }
 
-    public void calcularKm(long tiempo) {
-        distanciaAcum = (vel * tiempo / 3600);
-        distanciaAcum = (float) Math.rint(distanciaAcum * 100) / 100;
+    private float calcularK(int edad, float peso) {
+        K = 10 + 10 * ((30 - edad) / 10) + 10 * (peso / 100);                               //  Por si necesita modificar   las calorías deben ser calculadas
+        K = 10;
+        return K;
+
+    }
+
+    public void calcularKm() {
+        distanciaAcum = distanciaAcum + (vel / 3600);
+    }
+
+    public String getDistAcumString(){
+
+        DecimalFormat formateador = new DecimalFormat(" #0.00", simbolos);
+        float km = (float) Math.rint(distanciaAcum * 100) / 100;
+        String kms = "      " + formateador.format(km);
+        return kms;
 
     }
 
