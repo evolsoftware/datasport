@@ -11,63 +11,18 @@ import java.sql.*;
  *
  * @author Reinaldo Pabon
  */
-public class Conexion {
-    
-    private String url = "/home/rafael/NetBeansProjects/datasport/DataSport/src/datasport/BDdatasport1";
-    private Connection connect;
-    private Statement st;
-    
-    public void connect(){
-        try {
-            connect = DriverManager.getConnection("jdbc:sqlite:"+url);
-            if (connect!=null) {
-                st = connect.createStatement();
-                System.out.println("Conectado a la BD");
-            }
-        }catch (SQLException ex) {
-            System.err.println("No se ha podido conectar a la BD\n"+ex.getMessage());
-        }
-    }
-    
-    public void close(){
-        try {
-            connect.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-    }
 
-    public Statement getSt() {
-        return st;
-    }
-    
-    public Connection getConnection()
-    {
-        if(connect!=null){
-            return connect;
+
+public class Conexion {
+    static Connection cn = null;
+    public static Connection Enlace(Connection cn)throws SQLException{
+        String ruta = "/home/rafael/NetBeansProjects/local/datasport/DataSport/src/basededatos/BDdatasport1";
+        try{
+        Class.forName("org.sqlite.JDBC");
+        cn = DriverManager.getConnection("jdbc:sqlite:"+ruta);        
+        }catch(ClassNotFoundException ex){
+        System.err.println("No se ha podido conectar a la BD en conexion-java\n"+ex.getMessage());
         }
-        return null;  //si hay conexión le regresa la conexión, de lo contrario le regresa null
+        return cn;
     }
-    /*
-    public void guardarenBD(int usuario, float calorias, float calAcumuladas, float CI, float CV, float inc, int tiempo, float vel, int vuelta){
-        
-        try {
-            PreparedStatement st = connect.prepareStatement("insert into ejercicio (usuario, calorias, calAcumuladas, CI, CV, inc, tiempo, vel, vuelta) values (?,?,?,?,?,?,?,?,?)");
-            st.setInt(1, usuario);
-            st.setFloat(2, calorias);
-            st.setFloat(3, calAcumuladas);
-            st.setFloat(4, CI);
-            st.setFloat(5,CV);
-            st.setFloat(6, inc);
-            st.setInt(7, tiempo);
-            st.setFloat(8,vel);
-            st.setInt(9, vuelta);            
-            st.execute();
-        } catch (SQLException ex) {
-            System.err.println(ex.getMessage());
-        }
-    
-    }
-    */
-   
 }
