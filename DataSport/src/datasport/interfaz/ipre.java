@@ -503,183 +503,100 @@ public class ipre extends javax.swing.JFrame {
         panelPpal.setMaximumSize(new java.awt.Dimension(640, 360));
         panelPpal.setMinimumSize(new java.awt.Dimension(640, 360));
         panelPpal.setPreferredSize(new java.awt.Dimension(640, 360));
+        panelPpal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblModoNo.setFont(new java.awt.Font("Play", 0, 36)); // NOI18N
         lblModoNo.setForeground(new java.awt.Color(51, 51, 60));
         lblModoNo.setToolTipText("");
+        panelPpal.add(lblModoNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 12, 97, -1));
 
-        lblNoVuelta.setFont(new java.awt.Font("Play", 0, 40)); // NOI18N
+        lblNoVuelta.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 55)); // NOI18N
         lblNoVuelta.setForeground(new java.awt.Color(51, 51, 60));
         lblNoVuelta.setText("0");
+        panelPpal.add(lblNoVuelta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, -1, -1));
 
-        lblCalorias.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
+        lblCalorias.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         lblCalorias.setForeground(new java.awt.Color(51, 51, 60));
-        lblCalorias.setText("00000.00");
+        lblCalorias.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCalorias.setText("00000");
+        panelPpal.add(lblCalorias, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 90, -1));
 
-        lblCaloriasFijo.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
+        lblCaloriasFijo.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
         lblCaloriasFijo.setForeground(new java.awt.Color(51, 51, 60));
-        lblCaloriasFijo.setText("Calorias:");
+        lblCaloriasFijo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCaloriasFijo.setText("Calorias");
+        panelPpal.add(lblCaloriasFijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 90, -1));
 
-        lblKmFijo.setFont(new java.awt.Font("Play", 1, 14)); // NOI18N
+        lblKmFijo.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
         lblKmFijo.setForeground(new java.awt.Color(51, 51, 60));
         lblKmFijo.setText("Km/h");
+        panelPpal.add(lblKmFijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 130, -1, -1));
 
-        lblVel.setFont(new java.awt.Font("Play", 0, 80)); // NOI18N
+        lblVel.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 80)); // NOI18N
         lblVel.setForeground(new java.awt.Color(51, 51, 60));
+        lblVel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblVel.setText("  0.0");
         lblVel.setToolTipText("");
+        panelPpal.add(lblVel, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 60, 190, -1));
+        panelPpal.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(512, 92, -1, -1));
 
-        lblInc.setFont(new java.awt.Font("Play", 0, 80)); // NOI18N
+        lblInc.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 80)); // NOI18N
         lblInc.setForeground(new java.awt.Color(51, 51, 60));
+        lblInc.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblInc.setText("  0.0");
+        panelPpal.add(lblInc, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, 190, -1));
+        panelPpal.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(506, 92, -1, -1));
 
-        lblGradosFijo.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
+        lblGradosFijo.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 90)); // NOI18N
         lblGradosFijo.setForeground(new java.awt.Color(51, 51, 60));
         lblGradosFijo.setText("°");
+        panelPpal.add(lblGradosFijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 180, -1, 70));
+        panelPpal.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(738, 74, -1, -1));
 
-        lblTitulo.setFont(new java.awt.Font("Play", 0, 36)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 36)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(51, 51, 60));
         lblTitulo.setText("Modo Prestablecido");
+        panelPpal.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, -1, -1));
 
-        lblKmFIjo.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
+        lblKmFIjo.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
         lblKmFIjo.setForeground(new java.awt.Color(51, 51, 60));
-        lblKmFIjo.setText("Km recorridos:");
+        lblKmFIjo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblKmFIjo.setText("Km recorridos");
+        panelPpal.add(lblKmFIjo, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 160, -1));
 
-        lblKms.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
+        lblKms.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         lblKms.setForeground(new java.awt.Color(51, 51, 60));
         lblKms.setText("       00.00");
         lblKms.setToolTipText("");
+        panelPpal.add(lblKms, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 150, -1));
 
-        lblReloj.setFont(new java.awt.Font("Play", 1, 24)); // NOI18N
+        lblReloj.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 40)); // NOI18N
+        lblReloj.setForeground(new java.awt.Color(51, 51, 60));
         lblReloj.setText("00:00:00");
+        panelPpal.add(lblReloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 44));
 
-        lblTiempo.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        lblTiempo.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 70)); // NOI18N
+        lblTiempo.setForeground(new java.awt.Color(51, 51, 60));
         lblTiempo.setText("00:00:00");
         lblTiempo.setToolTipText("");
+        panelPpal.add(lblTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, 92));
 
-        lblConsola.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblConsola.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
+        lblConsola.setForeground(new java.awt.Color(51, 51, 60));
+        lblConsola.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        panelPpal.add(lblConsola, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 650, 130));
 
-        lblVueltaFijo.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
+        lblVueltaFijo.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
+        lblVueltaFijo.setForeground(new java.awt.Color(51, 51, 60));
+        lblVueltaFijo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblVueltaFijo.setText("Vuelta No.");
+        panelPpal.add(lblVueltaFijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 125, 42));
 
-        lblTiempoFijo.setFont(new java.awt.Font("Play", 0, 18)); // NOI18N
+        lblTiempoFijo.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
+        lblTiempoFijo.setForeground(new java.awt.Color(51, 51, 60));
+        lblTiempoFijo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTiempoFijo.setText("Tiempo Transcurrido");
-
-        javax.swing.GroupLayout panelPpalLayout = new javax.swing.GroupLayout(panelPpal);
-        panelPpal.setLayout(panelPpalLayout);
-        panelPpalLayout.setHorizontalGroup(
-            panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPpalLayout.createSequentialGroup()
-                .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelPpalLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel13))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPpalLayout.createSequentialGroup()
-                        .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelPpalLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(lblConsola, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelPpalLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(lblReloj)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelPpalLayout.createSequentialGroup()
-                                .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(panelPpalLayout.createSequentialGroup()
-                                            .addComponent(jLabel12)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel3))
-                                        .addGroup(panelPpalLayout.createSequentialGroup()
-                                            .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(lblKmFIjo)
-                                                .addComponent(lblCaloriasFijo))
-                                            .addGap(18, 18, 18)
-                                            .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(lblKms, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(lblCalorias, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGap(22, 22, 22))
-                                        .addGroup(panelPpalLayout.createSequentialGroup()
-                                            .addComponent(lblTiempoFijo)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(lblTiempo)))
-                                    .addGroup(panelPpalLayout.createSequentialGroup()
-                                        .addComponent(lblVueltaFijo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(90, 90, 90)
-                                        .addComponent(lblNoVuelta)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(panelPpalLayout.createSequentialGroup()
-                                        .addComponent(lblVel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, 0)
-                                        .addComponent(lblKmFijo))
-                                    .addGroup(panelPpalLayout.createSequentialGroup()
-                                        .addComponent(lblInc, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(lblGradosFijo))))
-                            .addGroup(panelPpalLayout.createSequentialGroup()
-                                .addComponent(lblTitulo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lblModoNo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        panelPpalLayout.setVerticalGroup(
-            panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPpalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblReloj, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                    .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblTitulo)
-                        .addComponent(lblModoNo)))
-                .addGap(18, 18, 18)
-                .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelPpalLayout.createSequentialGroup()
-                        .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblVel)
-                            .addComponent(lblKmFijo))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
-                        .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblInc)
-                            .addComponent(lblGradosFijo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(106, 106, 106))
-                    .addGroup(panelPpalLayout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel3)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panelPpalLayout.createSequentialGroup()
-                        .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelPpalLayout.createSequentialGroup()
-                                .addComponent(lblConsola, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(panelPpalLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel12)
-                                .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(panelPpalLayout.createSequentialGroup()
-                                        .addGap(44, 44, 44)
-                                        .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(lblNoVuelta)
-                                            .addComponent(lblVueltaFijo, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPpalLayout.createSequentialGroup()
-                                        .addGap(100, 100, 100)
-                                        .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(lblTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(lblTiempoFijo))
-                                        .addGap(18, 18, 18)))))
-                        .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblCalorias)
-                            .addComponent(lblCaloriasFijo))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblKmFIjo)
-                            .addComponent(lblKms))
-                        .addGap(11, 11, 11))))
-        );
+        panelPpal.add(lblTiempoFijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
 
         bttPlay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/play.png"))); // NOI18N
         bttPlay.setBorder(null);
