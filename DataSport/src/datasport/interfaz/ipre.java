@@ -62,7 +62,7 @@ public class ipre extends javax.swing.JFrame {
 
     //datos a partir del txt
     public void inicializarDatosLectora() {
-        leer = new Lectora("E:\\datasport\\DataSport\\src\\datasport\\config.txt");
+        leer = new Lectora("D:\\datasport\\DataSport\\src\\datasport\\config.txt");
         limInf = leer.getLimInf();
         limSup = leer.getLimSup();
         //inc = leer.getInc();
@@ -597,7 +597,7 @@ public class ipre extends javax.swing.JFrame {
         lblConsola.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
         lblConsola.setForeground(new java.awt.Color(51, 51, 60));
         lblConsola.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        panelPpal.add(lblConsola, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 650, 130));
+        panelPpal.add(lblConsola, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 200, 130));
 
         lblVueltaFijo.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
         lblVueltaFijo.setForeground(new java.awt.Color(51, 51, 60));
@@ -1221,8 +1221,9 @@ public class ipre extends javax.swing.JFrame {
     private void bttPlayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttPlayMouseClicked
         // TODO add your handling code here:
         String texto;
-        actualizadorReloj.setBoton("play");
+        
         if (modo == 0) {
+           
             if (sesion.getVel() == 0) {
                 texto = "<html><body>Seleccione la Velocidad <br> y la<br>Inclinación</body></html>";
                 lblConsola.setText(texto);
