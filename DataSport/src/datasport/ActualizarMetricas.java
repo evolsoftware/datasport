@@ -150,6 +150,8 @@ public class ActualizarMetricas implements Runnable {
                     lblKm.setText("       00.00");
                     lblVuelta.setText("0");
                     reloj.setEstado("stop");
+                    lblVel.setText("0.0");
+                    lblInc.setText("0.0");
                 }
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
