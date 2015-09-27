@@ -34,7 +34,7 @@ public class DataSport {
     private Programa progPrest;
     private JLabel lblVel, lblInc;
     private DecimalFormatSymbols simbolos;                                         //Para colocar el simbolo de "." a cal y km
-    private String estadoPrest;
+    private String estadoPrest, vueltaPre;
 
     public DataSport(int distVuelta) {
         //Modo Libre
@@ -259,7 +259,7 @@ public class DataSport {
     }
 
     public String getIncString() {
-        DecimalFormat formateador = new DecimalFormat("00.0", simbolos);
+        DecimalFormat formateador = new DecimalFormat("#0.0", simbolos);
         float inc0 = inc;
         String inc1 = "" + formateador.format(inc0);
         return inc1;
@@ -289,14 +289,8 @@ public class DataSport {
         return calorias;
     }
 
-    public String getVueltaString() {
-        if (modo == 0) {
-            String sV = "" + vuelta;
-            return sV;
-        } else {
-            String sV = "" + progPrest.getNoVueltaA(vuelta);
-            return sV;
-        }
+    public String getVueltaPre() {
+        return vueltaPre;
 
     }
 
@@ -309,6 +303,7 @@ public class DataSport {
             if (vuelta < progPrest.getVueltas()) {
                 vel = progPrest.getVelVuelta(vuelta);
                 inc = progPrest.getIncVuelta(vuelta);
+                vueltaPre = "" + progPrest.getNoVueltaA(vuelta);
 
             } else {
                 estadoPrest = "stop";

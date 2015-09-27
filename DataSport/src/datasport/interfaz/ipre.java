@@ -80,17 +80,17 @@ public class ipre extends javax.swing.JFrame {
         progPrest0 = new Programa(0, vueltasProg0);
         //Creación del programa1
         ArrayList<Vuelta> vueltasProg1 = new ArrayList<Vuelta>();
-        Vuelta vuelta10 = new Vuelta(0, 100.0f, 10.0f);
+        Vuelta vuelta10 = new Vuelta(0, 120.0f, 10.0f);
         vueltasProg1.add(vuelta10);
-        Vuelta vuelta11 = new Vuelta(1, 100.0f, 10.0f);
+        Vuelta vuelta11 = new Vuelta(1, 130.0f, 10.0f);
         vueltasProg1.add(vuelta11);
-        Vuelta vuelta12 = new Vuelta(2, 120.0f, 15.0f);
+        Vuelta vuelta12 = new Vuelta(2, 140.0f, 15.0f);
         vueltasProg1.add(vuelta12);
-        Vuelta vuelta13 = new Vuelta(3, 130.0f, 20.0f);
+        Vuelta vuelta13 = new Vuelta(3, 150.0f, 20.0f);
         vueltasProg1.add(vuelta13);
-        Vuelta vuelta14 = new Vuelta(4, 140.0f, 1.5f);
+        Vuelta vuelta14 = new Vuelta(4, 160.0f, 1.5f);
         vueltasProg1.add(vuelta14);
-        Vuelta vuelta15 = new Vuelta(5, 150.0f, 2.0f);
+        Vuelta vuelta15 = new Vuelta(5, 170.0f, 2.0f);
         vueltasProg1.add(vuelta15);
         progPrest1 = new Programa(1, vueltasProg1);
         //Creación del programa2
