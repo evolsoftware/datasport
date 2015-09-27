@@ -302,9 +302,7 @@ public class DataSport {
         if (modo == 1) {
             if (vuelta < progPrest.getVueltas()) {
                 vel = progPrest.getVelVuelta(vuelta);
-//                lblVel.setText("" + vel);
                 inc = progPrest.getIncVuelta(vuelta);
-//                lblInc.setText("" + inc);
 
             } else {
                 estadoPrest = "stop";

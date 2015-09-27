@@ -78,7 +78,7 @@ public class ActualizarMetricas implements Runnable {
                      */ {
 
                         int tiempo = (int) reloj.getTiempoTranscurrido();
-                        System.out.println("El tiempo de las metricas es "+tiempo);
+                        System.out.println("El tiempo de las metricas es " + tiempo);
 
                         calculos();
 
@@ -98,17 +98,17 @@ public class ActualizarMetricas implements Runnable {
 
                         } else {
 
-                            if (((tiempo+1) % intervaloMostrarPantalla) == 0) {
+                            if (((tiempo + 1) % intervaloMostrarPantalla) == 0) {
 
                                 lblCal.setText(calSeg);
                                 lblKm.setText(kmAcum);
                                 lblVuelta.setText(vueltas);
-                                if(programa.getModo()==1){
+                                if (programa.getModo() == 1) {
                                     lblVel.setText(programa.getVelString());
-                                lblInc.setText(""+programa.getIncString());
-  
+                                    lblInc.setText("" + programa.getIncString());
+
                                 }
-                              
+
                             }
                         }
                     } else /*
@@ -147,6 +147,7 @@ public class ActualizarMetricas implements Runnable {
                     lblCal.setText("00000.00");
                     lblKm.setText("       00.00");
                     lblVuelta.setText("0");
+                    reloj.setEstado("stop");
                 }
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
