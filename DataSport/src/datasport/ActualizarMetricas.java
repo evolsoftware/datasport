@@ -95,6 +95,9 @@ public class ActualizarMetricas implements Runnable {
                             lblCal.setText("00000.00");
                             lblKm.setText("       00.00");
                             lblVuelta.setText("0");
+                            if(programa.getModo()==1){
+                                lblVuelta.setText("1");
+                            }
 
                         } else {
 
