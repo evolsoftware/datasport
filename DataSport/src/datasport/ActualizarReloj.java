@@ -21,11 +21,13 @@ public class ActualizarReloj implements Runnable {
     public boolean vivo;                                                        //Para que se repita el run
     private Relojrun reloj;
     private String botonR;
+    private DataSport programa;
 
-    public ActualizarReloj(JLabel lblReloj, JLabel lblTiempo, Relojrun reloj/*, int intervalo, DataSport programa*/) {
+    public ActualizarReloj(JLabel lblReloj, JLabel lblTiempo, Relojrun reloj,/*, int intervalo*/ DataSport programa) {
         this.lblReloj = lblReloj;
         this.lblTiempo = lblTiempo;
         this.reloj = reloj;
+        this.programa = programa;
         vivo = true;
         stop = 0;
         llave =0;
@@ -63,7 +65,7 @@ public class ActualizarReloj implements Runnable {
                     }
                 String tiempoTranscurrido = reloj.calcularTiempoTranscurrido();
                 
-                System.out.println("El tiempo del reloj es"+reloj.getTiempoTranscurrido());
+//                System.out.println("El tiempo del reloj es"+reloj.getTiempoTranscurrido());
                 lblTiempo.setText(tiempoTranscurrido);
                 stop = stop + 1;
                 }
@@ -81,7 +83,11 @@ public class ActualizarReloj implements Runnable {
                        lblTiempo.setText("00:00:00");
                     }
                 }
-                
+                if(programa.getEstadoPrest()=="stop"){
+                   reloj.resetsaveT();
+                       stop=0;
+                       lblTiempo.setText("00:00:00"); 
+                }
                 lblReloj.setText(hora);
                 Thread.sleep(1000);
 //               

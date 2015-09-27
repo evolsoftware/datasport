@@ -12,6 +12,7 @@ import datasport.Relojrun;
 import datasport.Lectora;
 import datasport.Programa;
 import datasport.Vuelta;
+import java.util.ArrayList;
 
 /**
  *
@@ -71,32 +72,33 @@ public class ipre extends javax.swing.JFrame {
 
     public void inicializar() {
         reloj = new Relojrun();
-        actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
-        Vuelta[] vueltaProg0 = new Vuelta[1];
+        actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj,sesion);
+        ArrayList<Vuelta> vueltasProg0 = new ArrayList<Vuelta>();
+        //Creación del programa 0
         Vuelta vuelta0 = new Vuelta(0, 0.0f, 0.0f);
-        vueltaProg0[0] = vuelta0;
-        progPrest0 = new Programa(0, vueltaProg0);
+        vueltasProg0.add(vuelta0);
+        progPrest0 = new Programa(0, vueltasProg0);
         //Creación del programa1
-        Vuelta[] vueltasProg1 = new Vuelta[5];
-        Vuelta vuelta1 = new Vuelta(1, 50.0f, 10.0f);
-        vueltasProg1[0] = vuelta1;
-        Vuelta vuelta2 = new Vuelta(2, 15.0f, 15.0f);
-        vueltasProg1[1] = vuelta2;
-        Vuelta vuelta3 = new Vuelta(3, 20.0f, 20.0f);
-        vueltasProg1[2] = vuelta3;
-        Vuelta vuelta4 = new Vuelta(4, 4.0f, 1.5f);
-        vueltasProg1[3] = vuelta4;
-        Vuelta vuelta5 = new Vuelta(5, 5.0f, 2.0f);
-        vueltasProg1[4] = vuelta5;
+        ArrayList<Vuelta> vueltasProg1 = new ArrayList<Vuelta>();
+        Vuelta vuelta1 = new Vuelta(1, 100.0f, 10.0f);
+        vueltasProg1.add(vuelta1);
+        Vuelta vuelta2 = new Vuelta(2, 120.0f, 15.0f);
+        vueltasProg1.add(vuelta2);
+        Vuelta vuelta3 = new Vuelta(3, 130.0f, 20.0f);
+        vueltasProg1.add(vuelta3);
+        Vuelta vuelta4 = new Vuelta(4, 140.0f, 1.5f);
+        vueltasProg1.add(vuelta4);
+        Vuelta vuelta5 = new Vuelta(5, 150.0f, 2.0f);
+        vueltasProg1.add(vuelta5);
         progPrest1 = new Programa(1, vueltasProg1);
         //Creación del programa2
-        Vuelta[] vueltasProg2 = new Vuelta[3];
+        ArrayList<Vuelta> vueltasProg2 = new ArrayList<Vuelta>();
         Vuelta vuelta12 = new Vuelta(1, 1.0f, 1.0f);
-        vueltasProg2[0] = vuelta12;
+        vueltasProg2.add(vuelta12);
         Vuelta vuelta22 = new Vuelta(2, 2.0f, 3.0f);
-        vueltasProg2[1] = vuelta22;
+        vueltasProg2.add(vuelta22);
         Vuelta vuelta32 = new Vuelta(3, 3.0f, 5.0f);
-        vueltasProg2[1] = vuelta32;
+        vueltasProg2.add(vuelta32);
         progPrest2 = new Programa(2, vueltasProg2);
         /*
          Se inicializa la instancia del modoLibre
@@ -109,7 +111,7 @@ public class ipre extends javax.swing.JFrame {
 
     public void inicializarHilosRunnables() {
         reloj = new Relojrun();
-        actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
+        actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj, sesion);
         hiloReloj = new Thread(actualizadorReloj, "hiloReloj");
         hiloReloj.start();
 
@@ -122,7 +124,7 @@ public class ipre extends javax.swing.JFrame {
 
     public void cambio() {
         if (modo == 0) {
-           
+
             lblTitulo.setText("          MODO LIBRE          ");
             lblModoNo.setVisible(false);
 
@@ -1059,7 +1061,7 @@ public class ipre extends javax.swing.JFrame {
             sesion.valorBoton(lblVel, 2.0f, 0);
         } else {
             sesion.setProgPrest(progPrest2);
-                       lblModoNo.setText("No. 1");
+            lblModoNo.setText("No. 1");
             lblVel.setText(sesion.getVelPrestablecido());
             lblInc.setText(sesion.getIncPrestablecido());
         }
@@ -1247,7 +1249,7 @@ public class ipre extends javax.swing.JFrame {
         //sesionPre = new DataSport(distVuelta, progPrest1);
         actualizadorMetricas.setVivo(false);
         actualizadorReloj.setVivo(false);
-        sesion = new DataSport(distVuelta, progPrest0);
+        sesion = new DataSport(distVuelta, progPrest0, lblVel, lblInc);
         inicializarHilosRunnables();
 
         modo = 1;

@@ -7,6 +7,7 @@ package datasport;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
+import java.util.ArrayList;
 import javax.swing.JLabel;
 
 /**
@@ -31,7 +32,9 @@ public class DataSport {
     private int vuelta, modo, distVuelta, edad;
     //private int intervalo
     private Programa progPrest;
+    private JLabel lblVel, lblInc;
     private DecimalFormatSymbols simbolos;                                         //Para colocar el simbolo de "." a cal y km
+    private String estadoPrest;
 
     public DataSport(int distVuelta) {
         //Modo Libre
@@ -43,7 +46,7 @@ public class DataSport {
 
     }
 
-    public DataSport(int distVuelta, Programa progPrest) {
+    public DataSport(int distVuelta, Programa progPrest, JLabel lblVel, JLabel lblInc) {
         //Prestablecido
         this.distVuelta = distVuelta;
         this.progPrest = progPrest;
@@ -51,7 +54,14 @@ public class DataSport {
         simbolos.setDecimalSeparator('.');
         modo = 1;
         calcularK(edad, peso);
+        this.lblVel = lblVel;
+        this.lblInc = lblInc;
     }
+
+    public String getEstadoPrest() {
+        return estadoPrest;
+    }
+    
 
     public void setProgPrest(Programa progPrest) {
         this.progPrest = progPrest;
@@ -285,9 +295,19 @@ public class DataSport {
         int distanciaRedondeada = Math.round(distanciaM);
         vuelta = distanciaRedondeada / distVuelta;
         if (modo == 1) {
-            vel = progPrest.getVelVuelta(vuelta);
-            inc = progPrest.getIncVuelta(vuelta);
-        }
+           if(vuelta < progPrest.getVueltas()) {
+                vel = progPrest.getVelVuelta(vuelta);
+                lblVel.setText("" + vel);
+                inc = progPrest.getIncVuelta(vuelta);
+                lblInc.setText("" + inc);
+                
+
+            }else{
+               estadoPrest = "stop";
+               System.out.println("Programa Finalizado");
+           }
+            }
+        
     }
 
     public float calcularCal(long intervalo) {
@@ -320,9 +340,9 @@ public class DataSport {
         distanciaAcum = distanciaAcum + (vel / 3600);
     }
 
-    public String getDistAcumString(){
+    public String getDistAcumString() {
 
-        DecimalFormat formateador = new DecimalFormat(" #0.00", simbolos);
+        DecimalFormat formateador = new DecimalFormat(" 00.00", simbolos);
         float km = (float) Math.rint(distanciaAcum * 100) / 100;
         String kms = "      " + formateador.format(km);
         return kms;

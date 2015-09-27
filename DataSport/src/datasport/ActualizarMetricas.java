@@ -95,8 +95,6 @@ public class ActualizarMetricas implements Runnable {
                             lblKm.setText("       00.00");
                             lblVuelta.setText("0");
 
-                      
-
                         } else {
 
                             if (((tiempo + 1) % intervaloMostrarPantalla) == 0) {
@@ -129,11 +127,20 @@ public class ActualizarMetricas implements Runnable {
                             programa.resetKm();
                             programa.resetVuelta();
                             programa.resetParametros();
-                            lblCal.setText("00.00");
-                            lblKm.setText("00.00");
+                            lblCal.setText("00000.00");
+                            lblKm.setText("       00.00");
                             lblVuelta.setText("0");
                         }
                     }
+                }
+                if (programa.getEstadoPrest() == "stop") {
+                    programa.resetCalorias();
+                    programa.resetKm();
+                    programa.resetVuelta();
+                    programa.resetParametros();
+                    lblCal.setText("00000.00");
+                    lblKm.setText("       00.00");
+                    lblVuelta.setText("0");
                 }
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
