@@ -6,7 +6,7 @@
 package datasport;
 
 import javax.swing.JLabel;
-
+import basededatos.Queries;
 /**
  *
  * @author Reinaldo Pabon Esta clase es el runnable para mostrar las calorías,
@@ -23,6 +23,7 @@ public class ActualizarMetricas implements Runnable {
     private int t;
     private int salto;
     private String botonM, vueltas, calSeg, kmAcum;
+    Queries queriBD;
 
     public void setVelIncPrestablecido() {
 
@@ -40,6 +41,7 @@ public class ActualizarMetricas implements Runnable {
         this.intervaloCalculoCalorias = intervaloCalculoCalorias;
         this.intervaloMostrarPantalla = intervaloMostrarPantalla;
         vivoM = true;
+        queriBD = new Queries();
 
     }
 
@@ -131,6 +133,8 @@ public class ActualizarMetricas implements Runnable {
                     {
                         if (botonM == "stop") {
 //                            System.out.println("usaron stop");
+                            Float velrafa = programa.getVel(); //toma la velocidad                            
+                            queriBD.AgregarBD(Float.parseFloat(kmAcum), Float.parseFloat(calSeg), Float.parseFloat(kmAcum)/0.04f, velrafa);
                             programa.resetCalorias();
                             programa.resetKm();
                             programa.resetVuelta();
@@ -138,10 +142,14 @@ public class ActualizarMetricas implements Runnable {
                             lblCal.setText("00000.00");
                             lblKm.setText("       00.00");
                             lblVuelta.setText("0");
+                            botonM = "";
                         }
                     }
                 }
+                
                 if (programa.getEstadoPrest() == "stop") {
+                    Float velrafa = programa.getVel(); //toma la velocidad                            
+                    queriBD.AgregarBD(Float.parseFloat(kmAcum), Float.parseFloat(calSeg), Float.parseFloat(kmAcum)/0.04f, velrafa);
                     programa.resetCalorias();
                     programa.resetKm();
                     programa.resetVuelta();
@@ -152,6 +160,10 @@ public class ActualizarMetricas implements Runnable {
                     reloj.setEstado("stop");
                     lblVel.setText("0.0");
                     lblInc.setText("0.0");
+//                    programa.setEstadoPrest("");
+                    System.out.println("detenido");
+                    vivoM = false;
+                    
                 }
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {

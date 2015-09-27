@@ -62,6 +62,12 @@ public class DataSport {
         return estadoPrest;
     }
 
+    public void setEstadoPrest(String estadoPrest) {
+        this.estadoPrest = estadoPrest;
+    }
+    
+    
+
     public void setProgPrest(Programa progPrest) {
         this.progPrest = progPrest;
     }

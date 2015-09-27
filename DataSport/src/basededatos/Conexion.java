@@ -16,7 +16,7 @@ import java.sql.*;
 public class Conexion {
     static Connection cn = null;
     public static Connection Enlace(Connection cn)throws SQLException{
-        String ruta = "/home/rafael/NetBeansProjects/local/datasport/DataSport/src/basededatos/BDdatasport1";
+        String ruta = "/home/rafael/NetBeansProjects/master/datasport/DataSport/src/basededatos/BDdatasport1";
         try{
         Class.forName("org.sqlite.JDBC");
         cn = DriverManager.getConnection("jdbc:sqlite:"+ruta);        

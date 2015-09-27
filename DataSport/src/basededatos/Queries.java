@@ -20,7 +20,7 @@ public class Queries {
     static Statement s;
     static ResultSet rs;
     
-    public void AgregarBD(String kilometros, String calorias, String velocidad, String vueltas){
+    public void AgregarBD(float kilometros, float calorias, float velocidad, float vueltas){
     
         try{
         cn = Conexion.Enlace(cn);
