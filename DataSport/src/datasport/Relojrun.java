@@ -103,7 +103,7 @@ public class Relojrun {
 
     public String getHoraString() {
         Date hoy = new Date();
-        SimpleDateFormat s = new SimpleDateFormat("hh:mm:ss");                    //De esta forma se obtiene la hora en el
+        SimpleDateFormat s = new SimpleDateFormat("hh:mm:ss a");                    //De esta forma se obtiene la hora en el
         return s.format(hoy);                                                   //Buen formato
     }
 

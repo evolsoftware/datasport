@@ -564,16 +564,18 @@
             <Component class="javax.swing.JLabel" name="lblModoNo">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Play" size="36" style="0"/>
+                  <Font name="Nirmala UI Semilight" size="36" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="3c" green="33" red="33" type="rgb"/>
                 </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="..."/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="480" y="12" width="97" height="-1"/>
+                  <AbsoluteConstraints x="630" y="0" width="90" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -602,11 +604,11 @@
                   <Color blue="3c" green="33" red="33" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="00000"/>
+                <Property name="text" type="java.lang.String" value="00000.00"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="360" y="180" width="90" height="-1"/>
+                  <AbsoluteConstraints x="344" y="180" width="120" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -723,11 +725,12 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="3c" green="33" red="33" type="rgb"/>
                 </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Modo Prestablecido"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="200" y="0" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="193" y="0" width="450" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -768,11 +771,12 @@
             <Component class="javax.swing.JLabel" name="lblReloj">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Nirmala UI Semilight" size="40" style="1"/>
+                  <Font name="Nirmala UI Semilight" size="36" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="3c" green="33" red="33" type="rgb"/>
                 </Property>
+                <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="text" type="java.lang.String" value="00:00:00"/>
               </Properties>
               <Constraints>

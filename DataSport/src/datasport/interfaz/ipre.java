@@ -53,7 +53,7 @@ public class ipre extends javax.swing.JFrame {
 
     //datos a partir del txt
     public void inicializarDatosLectora() {
-        leer = new Lectora("E:\\datasport\\DataSport\\src\\datasport\\config.txt");
+        leer = new Lectora("D:\\Ingenieria de Software I\\proye\\lo\\datasport\\DataSport\\src\\datasport\\config.txt");
         limInf = leer.getLimInf();
         limSup = leer.getLimSup();
         //inc = leer.getInc();
@@ -505,10 +505,12 @@ public class ipre extends javax.swing.JFrame {
         panelPpal.setPreferredSize(new java.awt.Dimension(640, 360));
         panelPpal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblModoNo.setFont(new java.awt.Font("Play", 0, 36)); // NOI18N
+        lblModoNo.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 36)); // NOI18N
         lblModoNo.setForeground(new java.awt.Color(51, 51, 60));
+        lblModoNo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblModoNo.setText("...");
         lblModoNo.setToolTipText("");
-        panelPpal.add(lblModoNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 12, 97, -1));
+        panelPpal.add(lblModoNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 90, -1));
 
         lblNoVuelta.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 55)); // NOI18N
         lblNoVuelta.setForeground(new java.awt.Color(51, 51, 60));
@@ -518,8 +520,8 @@ public class ipre extends javax.swing.JFrame {
         lblCalorias.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         lblCalorias.setForeground(new java.awt.Color(51, 51, 60));
         lblCalorias.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCalorias.setText("00000");
-        panelPpal.add(lblCalorias, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 90, -1));
+        lblCalorias.setText("00000.00");
+        panelPpal.add(lblCalorias, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 180, 120, -1));
 
         lblCaloriasFijo.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
         lblCaloriasFijo.setForeground(new java.awt.Color(51, 51, 60));
@@ -555,8 +557,9 @@ public class ipre extends javax.swing.JFrame {
 
         lblTitulo.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 36)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(51, 51, 60));
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("Modo Prestablecido");
-        panelPpal.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, -1, -1));
+        panelPpal.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 0, 450, -1));
 
         lblKmFIjo.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
         lblKmFIjo.setForeground(new java.awt.Color(51, 51, 60));
@@ -570,8 +573,9 @@ public class ipre extends javax.swing.JFrame {
         lblKms.setToolTipText("");
         panelPpal.add(lblKms, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, 150, -1));
 
-        lblReloj.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 40)); // NOI18N
+        lblReloj.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 36)); // NOI18N
         lblReloj.setForeground(new java.awt.Color(51, 51, 60));
+        lblReloj.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblReloj.setText("00:00:00");
         panelPpal.add(lblReloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 44));
 
