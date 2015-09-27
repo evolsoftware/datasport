@@ -606,7 +606,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="350" y="180" width="90" height="-1"/>
+                  <AbsoluteConstraints x="360" y="180" width="90" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -623,7 +623,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="350" y="200" width="90" height="-1"/>
+                  <AbsoluteConstraints x="360" y="200" width="90" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -744,7 +744,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="320" y="110" width="160" height="-1"/>
+                  <AbsoluteConstraints x="330" y="110" width="160" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -761,7 +761,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="310" y="90" width="150" height="-1"/>
+                  <AbsoluteConstraints x="320" y="90" width="150" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>

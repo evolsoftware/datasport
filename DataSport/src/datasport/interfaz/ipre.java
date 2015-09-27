@@ -519,13 +519,13 @@ public class ipre extends javax.swing.JFrame {
         lblCalorias.setForeground(new java.awt.Color(51, 51, 60));
         lblCalorias.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCalorias.setText("00000");
-        panelPpal.add(lblCalorias, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 90, -1));
+        panelPpal.add(lblCalorias, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 90, -1));
 
         lblCaloriasFijo.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
         lblCaloriasFijo.setForeground(new java.awt.Color(51, 51, 60));
         lblCaloriasFijo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCaloriasFijo.setText("Calorias");
-        panelPpal.add(lblCaloriasFijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 90, -1));
+        panelPpal.add(lblCaloriasFijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 90, -1));
 
         lblKmFijo.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
         lblKmFijo.setForeground(new java.awt.Color(51, 51, 60));
@@ -562,13 +562,13 @@ public class ipre extends javax.swing.JFrame {
         lblKmFIjo.setForeground(new java.awt.Color(51, 51, 60));
         lblKmFIjo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblKmFIjo.setText("Km recorridos");
-        panelPpal.add(lblKmFIjo, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 160, -1));
+        panelPpal.add(lblKmFIjo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 160, -1));
 
         lblKms.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         lblKms.setForeground(new java.awt.Color(51, 51, 60));
         lblKms.setText("       00.00");
         lblKms.setToolTipText("");
-        panelPpal.add(lblKms, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 150, -1));
+        panelPpal.add(lblKms, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, 150, -1));
 
         lblReloj.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 40)); // NOI18N
         lblReloj.setForeground(new java.awt.Color(51, 51, 60));
