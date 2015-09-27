@@ -46,14 +46,23 @@ public class ipre extends javax.swing.JFrame {
         inicializarDatosLectora();
         inicializar();
         cambio();
-        inicializarHilosRunnables();
+                       reloj = new Relojrun();
+        actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
+        hiloReloj = new Thread(actualizadorReloj, "hiloReloj");
+        hiloReloj.start();
+
+        actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms,
+                lblNoVuelta, lblVel, lblInc, reloj, sesion, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
+        hiloMetricas = new Thread(actualizadorMetricas, "hiloMetricas");
+        hiloMetricas.start();
+//        inicializarHilosRunnables();
         modo = 0;
 
     }
 
     //datos a partir del txt
     public void inicializarDatosLectora() {
-        leer = new Lectora("D:\\Ingenieria de Software I\\proye\\lo\\datasport\\DataSport\\src\\datasport\\config.txt");
+        leer = new Lectora("E:\\datasport\\DataSport\\src\\datasport\\config.txt");
         limInf = leer.getLimInf();
         limSup = leer.getLimSup();
         //inc = leer.getInc();
@@ -71,8 +80,8 @@ public class ipre extends javax.swing.JFrame {
     }
 
     public void inicializar() {
-        reloj = new Relojrun();
-        actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
+//        reloj = new Relojrun();
+//        actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
         ArrayList<Vuelta> vueltasProg0 = new ArrayList<Vuelta>();
         //Creación del programa 0
         Vuelta vuelta0 = new Vuelta(0, 0.0f, 0.0f);
@@ -114,15 +123,15 @@ public class ipre extends javax.swing.JFrame {
     }
 
     public void inicializarHilosRunnables() {
-        reloj = new Relojrun();
-        actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
-        hiloReloj = new Thread(actualizadorReloj, "hiloReloj");
-        hiloReloj.start();
-
-        actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms,
-                lblNoVuelta, lblVel, lblInc, reloj, sesion, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
-        hiloMetricas = new Thread(actualizadorMetricas, "hiloMetricas");
-        hiloMetricas.start();
+//        reloj = new Relojrun();
+//        actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
+//        hiloReloj = new Thread(actualizadorReloj, "hiloReloj");
+//        hiloReloj.start();
+//
+//        actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms,
+//                lblNoVuelta, lblVel, lblInc, reloj, sesion, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
+//        hiloMetricas = new Thread(actualizadorMetricas, "hiloMetricas");
+//        hiloMetricas.start();
 
     }
 
@@ -1175,7 +1184,17 @@ public class ipre extends javax.swing.JFrame {
         actualizadorMetricas.setVivo(false);
         actualizadorReloj.setVivo(false);
         sesion = new DataSport(distVuelta, progPrest0, lblVel, lblInc);
-        inicializarHilosRunnables();
+                reloj = new Relojrun();
+        actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
+        hiloReloj = new Thread(actualizadorReloj, "hiloReloj");
+        hiloReloj.start();
+
+        actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms,
+                lblNoVuelta, lblVel, lblInc, reloj, sesion, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
+        hiloMetricas = new Thread(actualizadorMetricas, "hiloMetricas");
+        hiloMetricas.start();
+
+//        inicializarHilosRunnables();
 
         modo = 1;
         cambio();

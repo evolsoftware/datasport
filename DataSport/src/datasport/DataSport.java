@@ -290,10 +290,12 @@ public class DataSport {
     }
 
     public String getVueltaPre() {
-        return vueltaPre;
-
+        if(modo==0){
+            return ""+vuelta;
+        }else{
+        return vueltaPre;    
+        }
     }
-
     public void calcularVuelta() {
         float distanciaM = distanciaAcum * 1000; //pasa la distancia metros
 
