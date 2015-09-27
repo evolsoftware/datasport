@@ -62,7 +62,7 @@ public class ipre extends javax.swing.JFrame {
 
     //datos a partir del txt
     public void inicializarDatosLectora() {
-        leer = new Lectora("/home/rafael/NetBeansProjects/master/datasport/DataSport/src/datasport/config.txt");
+        leer = new Lectora("E:\\datasport\\DataSport\\src\\datasport\\config.txt");
         limInf = leer.getLimInf();
         limSup = leer.getLimSup();
         //inc = leer.getInc();

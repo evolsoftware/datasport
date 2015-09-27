@@ -35,6 +35,7 @@ public class DataSport {
     private JLabel lblVel, lblInc;
     private DecimalFormatSymbols simbolos;                                         //Para colocar el simbolo de "." a cal y km
     private String estadoPrest, vueltaPre;
+    private ArrayList<Float> velArray, incArray;
 
     public DataSport(int distVuelta) {
         //Modo Libre
@@ -43,7 +44,8 @@ public class DataSport {
         calcularK(edad, peso);                                                   //Por ahora va retornar 10, cuando sea la versión dos se calcula verdaderamente
         simbolos = new DecimalFormatSymbols();
         simbolos.setDecimalSeparator('.');
-
+        velArray = new ArrayList<Float>();
+        incArray = new ArrayList<Float>();
     }
 
     public DataSport(int distVuelta, Programa progPrest, JLabel lblVel, JLabel lblInc) {
@@ -56,6 +58,8 @@ public class DataSport {
         calcularK(edad, peso);
         this.lblVel = lblVel;
         this.lblInc = lblInc;
+        velArray = new ArrayList<Float>();
+        incArray = new ArrayList<Float>();
     }
 
     public String getEstadoPrest() {
@@ -65,8 +69,6 @@ public class DataSport {
     public void setEstadoPrest(String estadoPrest) {
         this.estadoPrest = estadoPrest;
     }
-    
-    
 
     public void setProgPrest(Programa progPrest) {
         this.progPrest = progPrest;
@@ -126,6 +128,7 @@ public class DataSport {
     /*
      FIN Declaración Getters y Setters
      */
+   
     public void aumentar(JLabel etiqueta, float limSup, float limInf, float var,
             int idAtributo) {
         double x = Float.parseFloat(etiqueta.getText());
@@ -138,7 +141,9 @@ public class DataSport {
                 else {
                     etiqueta.setText("" + limInf);
                 }
-                vel = limInf;                                                      //Se establece la velocidad  
+                vel = limInf;         
+                velArray.add(vel);
+                
             } else {
                 if (x == limSup) {
                     if (x < 10) {
@@ -147,6 +152,7 @@ public class DataSport {
                         etiqueta.setText("" + limSup);
                     }
                     vel = limSup;
+                    velArray.add(vel);
                 } else {
                     x = x + var;
                     x = Math.rint(x * 10) / 10;
@@ -156,6 +162,7 @@ public class DataSport {
                         etiqueta.setText("" + x);
                     }
                     vel = (float) x;
+                    velArray.add(vel);
                 }
             }
         } else {
@@ -165,7 +172,8 @@ public class DataSport {
                 } else {
                     etiqueta.setText("" + limInf);
                 }
-                inc = limInf;                                                      //Se establece la velocidad  
+                inc = limInf;   
+                incArray.add(inc);
             } else {
                 if (x == limSup) {
                     if (x < 10) {
@@ -174,6 +182,7 @@ public class DataSport {
                         etiqueta.setText("" + limSup);
                     }
                     inc = limSup;
+                    incArray.add(inc);
                 } else {
                     x = x + var;
                     x = Math.rint(x * 10) / 10;
@@ -183,6 +192,7 @@ public class DataSport {
                         etiqueta.setText("" + x);
                     }//redondea a dos dígitos
                     inc = (float) x;
+                    incArray.add(inc);
                 }
             }
         }
@@ -199,6 +209,7 @@ public class DataSport {
                     etiqueta.setText("" + limInf);
                 }
                 vel = limInf;
+                velArray.add(vel);
             } else {
                 x = x - var;
                 x = Math.rint(x * 10) / 10;
@@ -208,6 +219,7 @@ public class DataSport {
                     etiqueta.setText("" + x);
                 }
                 vel = (float) x;
+                velArray.add(vel);
             }
         } else {
             if (x == limInf) {
@@ -217,6 +229,7 @@ public class DataSport {
                     etiqueta.setText("" + x);
                 }
                 inc = limInf;
+                incArray.add(inc);
             } else {
                 x = x - var;
                 x = Math.rint(x * 10) / 10;
@@ -226,6 +239,7 @@ public class DataSport {
                     etiqueta.setText("" + x);
                 }
                 inc = (float) x;
+                incArray.add(inc);
             }
         }
     }
@@ -238,8 +252,10 @@ public class DataSport {
         }
         if (idAtritbuto == 0) {
             vel = n;
+            velArray.add(vel);
         } else {
             inc = n;
+            incArray.add(inc);
         }
     }
 
@@ -296,12 +312,13 @@ public class DataSport {
     }
 
     public String getVueltaPre() {
-        if(modo==0){
-            return ""+vuelta;
-        }else{
-        return vueltaPre;    
+        if (modo == 0) {
+            return "" + vuelta;
+        } else {
+            return vueltaPre;
         }
     }
+
     public void calcularVuelta() {
         float distanciaM = distanciaAcum * 1000; //pasa la distancia metros
 
@@ -310,7 +327,9 @@ public class DataSport {
         if (modo == 1) {
             if (vuelta < progPrest.getVueltas()) {
                 vel = progPrest.getVelVuelta(vuelta);
+                velArray.add(vel);
                 inc = progPrest.getIncVuelta(vuelta);
+                incArray.add(inc);
                 vueltaPre = "" + progPrest.getNoVueltaA(vuelta);
 
             } else {
