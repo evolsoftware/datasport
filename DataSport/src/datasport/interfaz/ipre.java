@@ -1230,12 +1230,14 @@ public class ipre extends javax.swing.JFrame {
             } else {
                 texto = "<html><body>Modo Libre<br>En<br>Ejecución</body></html>";
                 lblConsola.setText(texto);
+                actualizadorReloj.setBoton("play");
                 actualizadorMetricas.setBoton("play");
             }
         } else {
             texto = "<html><body>Modo Prestablecido<br>En<br>Ejecución</body></html>";
             lblConsola.setText(texto);
             actualizadorMetricas.setBoton("play");
+            actualizadorReloj.setBoton("play");
         }
 
     }//GEN-LAST:event_bttPlayMouseClicked
