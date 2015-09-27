@@ -1251,7 +1251,21 @@ public class ipre extends javax.swing.JFrame {
         if (modo == 0) {
             sesion.valorBoton(lblInc, 0.0f, 1);
         } else {
+      lblTitulo.setText("          MODO LIBRE          ");
+            lblModoNo.setVisible(false);
+            actualizadorMetricas.setVivo(false);
+            actualizadorReloj.setVivo(false);
+            sesion = new DataSport(distVuelta);
+            reloj = new Relojrun();
+            actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
+            hiloReloj = new Thread(actualizadorReloj, "hiloReloj");
+            hiloReloj.start();
 
+            actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms,
+                    lblNoVuelta, lblVel, lblInc, reloj, sesion, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
+            hiloMetricas = new Thread(actualizadorMetricas, "hiloMetricas");
+            hiloMetricas.start();
+           modo = 0;
         }
 
     }//GEN-LAST:event_bttInc0MouseClicked
