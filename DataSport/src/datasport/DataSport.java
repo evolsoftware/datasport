@@ -290,8 +290,14 @@ public class DataSport {
     }
 
     public String getVueltaString() {
-        String sV = "" + progPrest.getNoVueltaA(vuelta);
-        return sV;
+        if (modo == 0) {
+            String sV = "" + vuelta;
+            return sV;
+        } else {
+            String sV = "" + progPrest.getNoVueltaA(vuelta);
+            return sV;
+        }
+
     }
 
     public void calcularVuelta() {
