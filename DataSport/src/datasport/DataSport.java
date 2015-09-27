@@ -290,7 +290,7 @@ public class DataSport {
     }
 
     public String getVueltaString() {
-        String sV = "" + vuelta;
+        String sV = "" + progPrest.getNoVueltaA(vuelta);
         return sV;
     }
 
