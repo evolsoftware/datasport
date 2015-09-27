@@ -43,7 +43,7 @@ public class ActualizarMetricas implements Runnable {
 
     }
 
-    public void calculos(int tiempo) {
+    public void calculos() {
         programa.calcularCal(intervaloCalculoCalorias);
         programa.calcularKm();
         programa.calcularVuelta();
@@ -78,8 +78,9 @@ public class ActualizarMetricas implements Runnable {
                      */ {
 
                         int tiempo = (int) reloj.getTiempoTranscurrido();
+                        System.out.println("El tiempo de las metricas es "+tiempo);
 
-                        calculos(tiempo);
+                        calculos();
 
                         vueltas = programa.getVueltaString();
                         kmAcum = programa.getDistAcumString();
@@ -97,12 +98,17 @@ public class ActualizarMetricas implements Runnable {
 
                         } else {
 
-                            if (((tiempo + 1) % intervaloMostrarPantalla) == 0) {
+                            if (((tiempo+1) % intervaloMostrarPantalla) == 0) {
 
                                 lblCal.setText(calSeg);
                                 lblKm.setText(kmAcum);
                                 lblVuelta.setText(vueltas);
-
+                                if(programa.getModo()==1){
+                                    lblVel.setText(programa.getVelString());
+                                lblInc.setText(""+programa.getIncString());
+  
+                                }
+                              
                             }
                         }
                     } else /*

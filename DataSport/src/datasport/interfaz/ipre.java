@@ -72,7 +72,7 @@ public class ipre extends javax.swing.JFrame {
 
     public void inicializar() {
         reloj = new Relojrun();
-        actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj,sesion);
+        actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
         ArrayList<Vuelta> vueltasProg0 = new ArrayList<Vuelta>();
         //Creación del programa 0
         Vuelta vuelta0 = new Vuelta(0, 0.0f, 0.0f);
@@ -111,7 +111,7 @@ public class ipre extends javax.swing.JFrame {
 
     public void inicializarHilosRunnables() {
         reloj = new Relojrun();
-        actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj, sesion);
+        actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
         hiloReloj = new Thread(actualizadorReloj, "hiloReloj");
         hiloReloj.start();
 
@@ -1061,7 +1061,7 @@ public class ipre extends javax.swing.JFrame {
             sesion.valorBoton(lblVel, 2.0f, 0);
         } else {
             sesion.setProgPrest(progPrest2);
-            lblModoNo.setText("No. 1");
+            lblModoNo.setText("No. 2");
             lblVel.setText(sesion.getVelPrestablecido());
             lblInc.setText(sesion.getIncPrestablecido());
         }

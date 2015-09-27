@@ -6,8 +6,8 @@
 package datasport;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
+import javax.swing.JLabel;
 
 /**
  * Esta clase solo es empleada para obtener informacion de la hora (ACA NO
@@ -25,6 +25,15 @@ public class Relojrun {
     private long horaParcial;
     private long tiempoTranscurrido;
     private long transcTemp=0;
+    private String estado;
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
 
     public long getDifHoras() {
         return difHoras;
@@ -38,6 +47,9 @@ public class Relojrun {
         return horaInicial;
     }
 
+    public void setHora0(JLabel lblTiempo){
+        lblTiempo.setText("00:00:00");
+    }
     
     public void resetsaveT()
     {

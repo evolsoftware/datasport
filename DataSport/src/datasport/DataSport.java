@@ -61,7 +61,6 @@ public class DataSport {
     public String getEstadoPrest() {
         return estadoPrest;
     }
-    
 
     public void setProgPrest(Programa progPrest) {
         this.progPrest = progPrest;
@@ -252,12 +251,18 @@ public class DataSport {
         return inc1;
     }
 
-    public void imprVel() {
-        System.out.println("La velocidad es: " + vel);
+    public String getVelString() {
+        DecimalFormat formateador = new DecimalFormat("00.0", simbolos);
+        float vel0 = vel;
+        String vel1 = "" + formateador.format(vel0);
+        return vel1;
     }
 
-    public void imprInc() {
-        System.out.println("La inclinación es: " + inc);
+    public String getIncString() {
+        DecimalFormat formateador = new DecimalFormat("00.0", simbolos);
+        float inc0 = inc;
+        String inc1 = "" + formateador.format(inc0);
+        return inc1;
     }
 
     public void resetCalorias() {
@@ -295,19 +300,18 @@ public class DataSport {
         int distanciaRedondeada = Math.round(distanciaM);
         vuelta = distanciaRedondeada / distVuelta;
         if (modo == 1) {
-           if(vuelta < progPrest.getVueltas()) {
+            if (vuelta < progPrest.getVueltas()) {
                 vel = progPrest.getVelVuelta(vuelta);
-                lblVel.setText("" + vel);
+//                lblVel.setText("" + vel);
                 inc = progPrest.getIncVuelta(vuelta);
-                lblInc.setText("" + inc);
-                
+//                lblInc.setText("" + inc);
 
-            }else{
-               estadoPrest = "stop";
-               System.out.println("Programa Finalizado");
-           }
+            } else {
+                estadoPrest = "stop";
+                System.out.println("Programa Finalizado");
             }
-        
+        }
+
     }
 
     public float calcularCal(long intervalo) {
