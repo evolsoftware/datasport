@@ -1307,7 +1307,7 @@ public class ipre extends javax.swing.JFrame {
         actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
         hiloReloj = new Thread(actualizadorReloj, "hiloReloj");
         hiloReloj.start();
-
+        lblConsola.setText("Seleccione el nivel de intensidad deseado");
         actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms,
                 lblNoVuelta, lblVel, lblInc, reloj, sesion, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
         hiloMetricas = new Thread(actualizadorMetricas, "hiloMetricas");
