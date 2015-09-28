@@ -62,6 +62,10 @@ public class DataSport {
         incArray = new ArrayList<Float>();
     }
 
+    public void setDistanciaAcum(float distanciaAcum) {
+        this.distanciaAcum = distanciaAcum;
+    }
+
     public String getEstadoPrest() {
         return estadoPrest;
     }
@@ -303,7 +307,7 @@ public class DataSport {
     }
 
     public String getVelPrestablecido() {
-        DecimalFormat formateador = new DecimalFormat("00.0", simbolos);
+        DecimalFormat formateador = new DecimalFormat("#0.0", simbolos);
         float vel0 = progPrest.getVelVuelta(0);
         String vel1 = "" + formateador.format(vel0);
         return vel1;
@@ -317,7 +321,7 @@ public class DataSport {
     }
 
     public String getVelString() {
-        DecimalFormat formateador = new DecimalFormat("00.0", simbolos);
+        DecimalFormat formateador = new DecimalFormat("#0.0", simbolos);
         float vel0 = vel;
         String vel1 = "" + formateador.format(vel0);
         return vel1;

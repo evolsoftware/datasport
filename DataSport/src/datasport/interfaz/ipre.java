@@ -51,7 +51,8 @@ public class ipre extends javax.swing.JFrame {
         inicializarDatosLectora();
         inicializar();
         cambio();
-                       reloj = new Relojrun();
+        sesion = new DataSport(distVuelta);
+        reloj = new Relojrun();
         actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
         hiloReloj = new Thread(actualizadorReloj, "hiloReloj");
         hiloReloj.start();
@@ -63,33 +64,33 @@ public class ipre extends javax.swing.JFrame {
 //        inicializarHilosRunnables();
         modo = 0;
 
-        actualizadorMetricas.llevarEtiquetas(VueltasFin, IncPromFin, VelPromFin, 
-                CalFin, KmFin, TiempoTFin, Resultados, UVueltasFin, UIncPromFin, 
-                UVelProm, UCalFin, UKmFin, UTiempoTFin , lblConsola);
+        actualizadorMetricas.llevarEtiquetas(VueltasFin, IncPromFin, VelPromFin,
+                CalFin, KmFin, TiempoTFin, Resultados, UVueltasFin, UIncPromFin,
+                UVelProm, UCalFin, UKmFin, UTiempoTFin, lblConsola);
     }
- /*
-    Esconde los elementos que se muestran al terminar las sesiones
-    */
-    public void esconder()
-    {
-    VueltasFin.setVisible(false);
-    IncPromFin.setVisible(false);
-    VelPromFin.setVisible(false);
-    CalFin.setVisible(false);
-    KmFin.setVisible(false);
-    TiempoTFin.setVisible(false);
-    Resultados.setVisible(false);
-    UVueltasFin.setVisible(false);
-    UIncPromFin.setVisible(false);
-    UVelProm.setVisible(false);
-    UCalFin.setVisible(false);
-    UKmFin.setVisible(false);
-    UTiempoTFin.setVisible(false);
+    /*
+     Esconde los elementos que se muestran al terminar las sesiones
+     */
+
+    public void esconder() {
+        VueltasFin.setVisible(false);
+        IncPromFin.setVisible(false);
+        VelPromFin.setVisible(false);
+        CalFin.setVisible(false);
+        KmFin.setVisible(false);
+        TiempoTFin.setVisible(false);
+        Resultados.setVisible(false);
+        UVueltasFin.setVisible(false);
+        UIncPromFin.setVisible(false);
+        UVelProm.setVisible(false);
+        UCalFin.setVisible(false);
+        UKmFin.setVisible(false);
+        UTiempoTFin.setVisible(false);
     }
-    
+
     //datos a partir del txt
     public void inicializarDatosLectora() {
-        leer = new Lectora("D:\\datasport\\DataSport\\src\\datasport\\config.txt");
+        leer = new Lectora("E:\\datasport\\DataSport\\src\\datasport\\config.txt");
         limInf = leer.getLimInf();
         limSup = leer.getLimSup();
         //inc = leer.getInc();
@@ -131,7 +132,7 @@ public class ipre extends javax.swing.JFrame {
         progPrest1 = new Programa(1, vueltasProg1);
         //Creación del programa2
         ArrayList<Vuelta> vueltasProg2 = new ArrayList<Vuelta>();
-         Vuelta vuelta20 = new Vuelta(0, 1.0f, 1.0f);
+        Vuelta vuelta20 = new Vuelta(0, 1.0f, 1.0f);
         vueltasProg2.add(vuelta20);
         Vuelta vuelta21 = new Vuelta(1, 1.0f, 1.0f);
         vueltasProg2.add(vuelta21);
@@ -143,9 +144,9 @@ public class ipre extends javax.swing.JFrame {
         /*
          Se inicializa la instancia del modoLibre
          */
-        sesion = new DataSport(distVuelta);
-        actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms,
-                lblVueltaFijo, lblVel, lblInc, reloj, sesion, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
+//        sesion = new DataSport(distVuelta);
+//        actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms,
+//                lblVueltaFijo, lblVel, lblInc, reloj, sesion, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
 
     }
 
@@ -1286,7 +1287,7 @@ public class ipre extends javax.swing.JFrame {
         actualizadorMetricas.setVivo(false);
         actualizadorReloj.setVivo(false);
         sesion = new DataSport(distVuelta, progPrest0, lblVel, lblInc);
-                reloj = new Relojrun();
+        reloj = new Relojrun();
         actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
         hiloReloj = new Thread(actualizadorReloj, "hiloReloj");
         hiloReloj.start();
@@ -1295,17 +1296,15 @@ public class ipre extends javax.swing.JFrame {
                 lblNoVuelta, lblVel, lblInc, reloj, sesion, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
         hiloMetricas = new Thread(actualizadorMetricas, "hiloMetricas");
         hiloMetricas.start();
-        actualizadorMetricas.llevarEtiquetas(VueltasFin, IncPromFin, VelPromFin, 
-                CalFin, KmFin, TiempoTFin, Resultados, UVueltasFin, UIncPromFin, 
+        actualizadorMetricas.llevarEtiquetas(VueltasFin, IncPromFin, VelPromFin,
+                CalFin, KmFin, TiempoTFin, Resultados, UVueltasFin, UIncPromFin,
                 UVelProm, UCalFin, UKmFin, UTiempoTFin, lblConsola);
 
 //        inicializarHilosRunnables();
-
         modo = 1;
         cambio();
         esconder();
         sesion.resetArray();
-        
 
 
     }//GEN-LAST:event_bttSpeedMouseClicked
@@ -1326,16 +1325,16 @@ public class ipre extends javax.swing.JFrame {
 
         q.eliminarTabla();
         System.exit(0);
-        
+
         // TODO add your handling code here:
     }//GEN-LAST:event_bttOffMouseClicked
 
     private void bttPlayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttPlayMouseClicked
         // TODO add your handling code here:
         String texto;
-        
+
         if (modo == 0) {
-           
+
             if (sesion.getVel() == 0) {
                 texto = "<html><body>Seleccione la Velocidad <br> y la<br>Inclinación</body></html>";
                 lblConsola.setText(texto);
@@ -1343,17 +1342,17 @@ public class ipre extends javax.swing.JFrame {
                 texto = "<html><body>Modo Libre<br>En<br>Ejecución</body></html>";
                 esconder();
                 sesion.resetArray();
-                
+
                 lblConsola.setText(texto);
                 actualizadorReloj.setBoton("play");
                 actualizadorMetricas.setBoton("play");
             }
         } else {
             texto = "<html><body>Modo Prestablecido<br>En<br>Ejecución</body></html>";
-        
+
             esconder();
             sesion.resetArray();
-            
+
             lblConsola.setText(texto);
             actualizadorMetricas.setBoton("play");
             actualizadorReloj.setBoton("play");
@@ -1373,7 +1372,7 @@ public class ipre extends javax.swing.JFrame {
         if (modo == 0) {
             sesion.valorBoton(lblInc, 0.0f, 1);
         } else {
-      lblTitulo.setText("          MODO LIBRE          ");
+            lblTitulo.setText("          MODO LIBRE          ");
             lblModoNo.setVisible(false);
             actualizadorMetricas.setVivo(false);
             actualizadorReloj.setVivo(false);
@@ -1387,7 +1386,7 @@ public class ipre extends javax.swing.JFrame {
                     lblNoVuelta, lblVel, lblInc, reloj, sesion, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
             hiloMetricas = new Thread(actualizadorMetricas, "hiloMetricas");
             hiloMetricas.start();
-           modo = 0;
+            modo = 0;
         }
 
     }//GEN-LAST:event_bttInc0MouseClicked
