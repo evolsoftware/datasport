@@ -25,17 +25,7 @@ public class DataSportTest {
     ArrayList<Vuelta> vueltasProg1;
     DataSport pruebaLibre, pruebaPre;
 
-    public DataSportTest() {
-
-    }
-
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
+ 
 
     @Before
     public void setUp() {
@@ -62,10 +52,7 @@ public class DataSportTest {
 
     }
 
-    @After
-    public void tearDown() {
-    }
-
+ 
 
 
     /**
