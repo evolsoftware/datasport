@@ -86,6 +86,7 @@ public class ipre extends javax.swing.JFrame {
         UCalFin.setVisible(false);
         UKmFin.setVisible(false);
         UTiempoTFin.setVisible(false);
+    
     }
 
     //datos a partir del txt
@@ -223,7 +224,6 @@ public class ipre extends javax.swing.JFrame {
         lblConsola = new javax.swing.JLabel();
         lblVueltaFijo = new javax.swing.JLabel();
         lblTiempoFijo = new javax.swing.JLabel();
-        Resultados = new javax.swing.JLabel();
         VueltasFin = new javax.swing.JLabel();
         VelPromFin = new javax.swing.JLabel();
         CalFin = new javax.swing.JLabel();
@@ -236,6 +236,7 @@ public class ipre extends javax.swing.JFrame {
         UCalFin = new javax.swing.JLabel();
         UKmFin = new javax.swing.JLabel();
         UTiempoTFin = new javax.swing.JLabel();
+        Resultados = new javax.swing.JLabel();
         bttPlay = new javax.swing.JButton();
         bttPause = new javax.swing.JButton();
         bttStop = new javax.swing.JButton();
@@ -609,7 +610,7 @@ public class ipre extends javax.swing.JFrame {
         lblTitulo.setForeground(new java.awt.Color(51, 51, 60));
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("Modo Prestablecido");
-        panelPpal.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 0, 450, -1));
+        panelPpal.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 450, -1));
 
         lblKmFIjo.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
         lblKmFIjo.setForeground(new java.awt.Color(51, 51, 60));
@@ -635,10 +636,10 @@ public class ipre extends javax.swing.JFrame {
         lblTiempo.setToolTipText("");
         panelPpal.add(lblTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, 92));
 
-        lblConsola.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
+        lblConsola.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 36)); // NOI18N
         lblConsola.setForeground(new java.awt.Color(51, 51, 60));
         lblConsola.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        panelPpal.add(lblConsola, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 720, 130));
+        panelPpal.add(lblConsola, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 720, 40));
 
         lblVueltaFijo.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
         lblVueltaFijo.setForeground(new java.awt.Color(51, 51, 60));
@@ -652,57 +653,72 @@ public class ipre extends javax.swing.JFrame {
         lblTiempoFijo.setText("Tiempo Transcurrido");
         panelPpal.add(lblTiempoFijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
 
-        Resultados.setFont(new java.awt.Font("Papyrus", 0, 36)); // NOI18N
-        Resultados.setText("Resultados");
-        panelPpal.add(Resultados, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, -1, 40));
-
-        VueltasFin.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        VueltasFin.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
+        VueltasFin.setForeground(new java.awt.Color(51, 51, 60));
         VueltasFin.setText("Vueltas");
-        panelPpal.add(VueltasFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, -1, -1));
+        panelPpal.add(VueltasFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
 
-        VelPromFin.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        VelPromFin.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
+        VelPromFin.setForeground(new java.awt.Color(51, 51, 60));
         VelPromFin.setText("Velocidad Promedio");
-        panelPpal.add(VelPromFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
+        panelPpal.add(VelPromFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, -1));
 
-        CalFin.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        CalFin.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
+        CalFin.setForeground(new java.awt.Color(51, 51, 60));
         CalFin.setText("Calorias quemadas");
-        panelPpal.add(CalFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, -1, -1));
+        panelPpal.add(CalFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, -1, -1));
 
-        KmFin.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        KmFin.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
+        KmFin.setForeground(new java.awt.Color(51, 51, 60));
         KmFin.setText("Kilometros recorridos");
-        panelPpal.add(KmFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 310, -1, -1));
+        panelPpal.add(KmFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, -1, -1));
 
-        TiempoTFin.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        TiempoTFin.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
+        TiempoTFin.setForeground(new java.awt.Color(51, 51, 60));
         TiempoTFin.setText("Tiempo total");
-        panelPpal.add(TiempoTFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, -1, -1));
+        panelPpal.add(TiempoTFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, -1, -1));
 
-        IncPromFin.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        IncPromFin.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
+        IncPromFin.setForeground(new java.awt.Color(51, 51, 60));
         IncPromFin.setText("Inclinacion Promedio");
-        panelPpal.add(IncPromFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, -1, -1));
+        panelPpal.add(IncPromFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
-        UVueltasFin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        UVueltasFin.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
+        UVueltasFin.setForeground(new java.awt.Color(51, 51, 60));
+        UVueltasFin.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         UVueltasFin.setText("0");
-        panelPpal.add(UVueltasFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, -1, -1));
+        panelPpal.add(UVueltasFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(313, 270, 30, -1));
 
-        UIncPromFin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        UIncPromFin.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
+        UIncPromFin.setForeground(new java.awt.Color(51, 51, 60));
+        UIncPromFin.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         UIncPromFin.setText("0.0");
-        panelPpal.add(UIncPromFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, -1, -1));
+        panelPpal.add(UIncPromFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 310, 70, -1));
 
-        UVelProm.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        UVelProm.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
+        UVelProm.setForeground(new java.awt.Color(51, 51, 60));
+        UVelProm.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         UVelProm.setText("0.0");
-        panelPpal.add(UVelProm, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 350, -1, -1));
+        panelPpal.add(UVelProm, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 350, 70, -1));
 
-        UCalFin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        UCalFin.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
+        UCalFin.setForeground(new java.awt.Color(51, 51, 60));
+        UCalFin.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         UCalFin.setText("00000.00");
-        panelPpal.add(UCalFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 280, -1, -1));
+        panelPpal.add(UCalFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 270, 110, -1));
 
-        UKmFin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        UKmFin.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
+        UKmFin.setForeground(new java.awt.Color(51, 51, 60));
+        UKmFin.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         UKmFin.setText("0");
-        panelPpal.add(UKmFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 320, -1, -1));
+        panelPpal.add(UKmFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 310, 70, -1));
 
-        UTiempoTFin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        UTiempoTFin.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
+        UTiempoTFin.setForeground(new java.awt.Color(51, 51, 60));
+        UTiempoTFin.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         UTiempoTFin.setText("00:00:00");
-        panelPpal.add(UTiempoTFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 360, -1, -1));
+        panelPpal.add(UTiempoTFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, 100, -1));
+        panelPpal.add(Resultados, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 250, -1, -1));
 
         bttPlay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/play.png"))); // NOI18N
         bttPlay.setBorder(null);
@@ -1047,7 +1063,7 @@ public class ipre extends javax.swing.JFrame {
                                     .addComponent(bttStop)
                                     .addComponent(bttPause)
                                     .addComponent(bttPlay))))
-                        .addGap(172, 172, 172))
+                        .addGap(211, 211, 211))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(panelPpal, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)))
@@ -1336,10 +1352,10 @@ public class ipre extends javax.swing.JFrame {
         if (modo == 0) {
 
             if (sesion.getVel() == 0) {
-                texto = "<html><body>Seleccione la Velocidad <br> y la<br>Inclinación</body></html>";
+                texto = "<html><body>Seleccione la Velocidad y la Inclinación</body></html>";
                 lblConsola.setText(texto);
             } else {
-                texto = "<html><body>Modo Libre<br>En<br>Ejecución</body></html>";
+                texto = "<html><body>Modo Libre En Ejecución</body></html>";
                 esconder();
                 sesion.resetArray();
 
@@ -1348,7 +1364,7 @@ public class ipre extends javax.swing.JFrame {
                 actualizadorMetricas.setBoton("play");
             }
         } else {
-            texto = "<html><body>Modo Prestablecido<br>En<br>Ejecución</body></html>";
+            texto = "<html><body>Modo Prestablecido En Ejecución</body></html>";
 
             esconder();
             sesion.resetArray();
