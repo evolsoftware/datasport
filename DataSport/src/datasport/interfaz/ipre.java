@@ -91,7 +91,8 @@ public class ipre extends javax.swing.JFrame {
 
     //datos a partir del txt
     public void inicializarDatosLectora() {
-        leer = new Lectora("D:\\Ingenieria de Software I\\proye\\fn\\datasport\\DataSport\\src\\datasport\\config.txt");
+        String ruta = "E:\\datasport\\DataSport\\src\\datasport\\config.txt";
+        leer = new Lectora(ruta);
         limInf = leer.getLimInf();
         limSup = leer.getLimSup();
         //inc = leer.getInc();
@@ -118,28 +119,28 @@ public class ipre extends javax.swing.JFrame {
         progPrest0 = new Programa(0, vueltasProg0);
         //Creación del programa1
         ArrayList<Vuelta> vueltasProg1 = new ArrayList<Vuelta>();
-        Vuelta vuelta10 = new Vuelta(0, 120.0f, 10.0f);
+        Vuelta vuelta10 = new Vuelta(0, 1.0f, 1.0f);
         vueltasProg1.add(vuelta10);
-        Vuelta vuelta11 = new Vuelta(1, 130.0f, 10.0f);
+        Vuelta vuelta11 = new Vuelta(1, 1.50f, 1.0f);
         vueltasProg1.add(vuelta11);
-        Vuelta vuelta12 = new Vuelta(2, 140.0f, 15.0f);
+        Vuelta vuelta12 = new Vuelta(2, 2.0f, 1.50f);
         vueltasProg1.add(vuelta12);
-        Vuelta vuelta13 = new Vuelta(3, 150.0f, 20.0f);
+        Vuelta vuelta13 = new Vuelta(3, 2.5f, 2.0f);
         vueltasProg1.add(vuelta13);
-        Vuelta vuelta14 = new Vuelta(4, 160.0f, 1.5f);
+        Vuelta vuelta14 = new Vuelta(4, 3.0f, 2.5f);
         vueltasProg1.add(vuelta14);
-        Vuelta vuelta15 = new Vuelta(5, 170.0f, 2.0f);
+        Vuelta vuelta15 = new Vuelta(5, 4.0f, 3.0f);
         vueltasProg1.add(vuelta15);
         progPrest1 = new Programa(1, vueltasProg1);
         //Creación del programa2
         ArrayList<Vuelta> vueltasProg2 = new ArrayList<Vuelta>();
         Vuelta vuelta20 = new Vuelta(0, 1.0f, 1.0f);
         vueltasProg2.add(vuelta20);
-        Vuelta vuelta21 = new Vuelta(1, 1.0f, 1.0f);
+        Vuelta vuelta21 = new Vuelta(1, 5.0f, 3.0f);
         vueltasProg2.add(vuelta21);
-        Vuelta vuelta22 = new Vuelta(2, 2.0f, 3.0f);
+        Vuelta vuelta22 = new Vuelta(2, 7.0f, 4.0f);
         vueltasProg2.add(vuelta22);
-        Vuelta vuelta23 = new Vuelta(3, 3.0f, 5.0f);
+        Vuelta vuelta23 = new Vuelta(3, 12.0f, 6.0f);
         vueltasProg2.add(vuelta23);
         progPrest2 = new Programa(2, vueltasProg2);
         /*
@@ -254,6 +255,8 @@ public class ipre extends javax.swing.JFrame {
         bttInc1 = new javax.swing.JButton();
         bttSpeed = new javax.swing.JButton();
         bttOff = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -1013,6 +1016,12 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 14)); // NOI18N
+        jLabel4.setText("On/Off");
+
+        jLabel5.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 14)); // NOI18N
+        jLabel5.setText("Programa Prestablecido");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -1020,11 +1029,22 @@ public class ipre extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bttSpeed, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bttOff, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(56, 56, 56)
+                                    .addComponent(bttOff, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .addComponent(jLabel4)
+                                    .addGap(16, 16, 16)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(56, 56, 56)
+                                .addComponent(bttSpeed, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel5)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                         .addComponent(panelPpal, javax.swing.GroupLayout.PREFERRED_SIZE, 737, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bttPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1050,23 +1070,27 @@ public class ipre extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(panelPpal, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(115, 115, 115)
-                                .addComponent(bttOff)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(bttSpeed))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(161, 161, 161)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(bttStop)
                                     .addComponent(bttPause)
-                                    .addComponent(bttPlay))))
-                        .addGap(211, 211, 211))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(panelPpal, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
+                                    .addComponent(bttPlay)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(95, 95, 95)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bttOff)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bttSpeed, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(186, 186, 186)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
@@ -1527,6 +1551,8 @@ public class ipre extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
