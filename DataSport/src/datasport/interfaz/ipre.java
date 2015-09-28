@@ -90,7 +90,7 @@ public class ipre extends javax.swing.JFrame {
 
     //datos a partir del txt
     public void inicializarDatosLectora() {
-        leer = new Lectora("E:\\datasport\\DataSport\\src\\datasport\\config.txt");
+        leer = new Lectora("D:\\Ingenieria de Software I\\proye\\fn\\datasport\\DataSport\\src\\datasport\\config.txt");
         limInf = leer.getLimInf();
         limSup = leer.getLimSup();
         //inc = leer.getInc();
@@ -1372,6 +1372,8 @@ public class ipre extends javax.swing.JFrame {
         if (modo == 0) {
             sesion.valorBoton(lblInc, 0.0f, 1);
         } else {
+            esconder();
+            sesion.resetArray();
             lblTitulo.setText("          MODO LIBRE          ");
             lblModoNo.setVisible(false);
             actualizadorMetricas.setVivo(false);
@@ -1387,6 +1389,7 @@ public class ipre extends javax.swing.JFrame {
             hiloMetricas = new Thread(actualizadorMetricas, "hiloMetricas");
             hiloMetricas.start();
             modo = 0;
+            actualizadorMetricas.llevarEtiquetas(VueltasFin, IncPromFin, VelPromFin, CalFin, KmFin, TiempoTFin, Resultados, UVueltasFin, UIncPromFin, UVelProm, UCalFin, UKmFin, UTiempoTFin, lblConsola);
         }
 
     }//GEN-LAST:event_bttInc0MouseClicked
