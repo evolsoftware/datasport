@@ -7,6 +7,7 @@ package datasport;
 
 import javax.swing.JLabel;
 import basededatos.Queries;
+
 /**
  *
  * @author Reinaldo Pabon Esta clase es el runnable para mostrar las calorías,
@@ -16,7 +17,9 @@ public class ActualizarMetricas implements Runnable {
 
     //Codigo que se ejecutara durante el thread
     private long intervaloCalculoCalorias, intervaloMostrarPantalla;
-    private JLabel lblCal, lblKm, lblVuelta, lblVel, lblInc;
+    private JLabel lblCal, lblKm, lblVuelta, lblVel, lblInc,VueltasFin,
+    IncPromFin,VelPromFin,CalFin,KmFin,TiempoTFin,Resultados,UVueltasFin,
+    UIncPromFin,UVelProm,UCalFin,UKmFin,UTiempoTFin,lblConsola;
     private boolean vivoM;                                                        //Para que se repita el run
     private DataSport programa;
     private Relojrun reloj;
@@ -43,6 +46,57 @@ public class ActualizarMetricas implements Runnable {
         vivoM = true;
         queriBD = new Queries();
 
+    }
+    
+    public void llevarEtiquetas(JLabel VueltasFin,JLabel IncPromFin,JLabel VelPromFin,JLabel CalFin,JLabel KmFin,
+    JLabel TiempoTFin,JLabel Resultados,JLabel UVueltasFin,JLabel UIncPromFin,
+    JLabel UVelProm,JLabel UCalFin,JLabel UKmFin,JLabel UTiempoTFin,JLabel lblConsola)
+    {
+    this.VueltasFin=VueltasFin;
+    this.IncPromFin=IncPromFin;
+    this.VelPromFin=VelPromFin;
+    this.CalFin=CalFin;
+    this.KmFin=KmFin;
+    this.TiempoTFin=TiempoTFin;
+    this.Resultados=Resultados;
+    this.UVueltasFin=UVueltasFin;
+    this.UIncPromFin=UIncPromFin;
+    this.UVelProm=UVelProm;
+    this.UCalFin=UCalFin;
+    this.UKmFin=UKmFin;
+    this.UTiempoTFin=UTiempoTFin;
+    this.lblConsola=lblConsola;
+    }
+    
+    public void mostrar()
+    {
+    lblConsola.setVisible(false);
+    VueltasFin.setVisible(true);
+    IncPromFin.setVisible(true);
+    VelPromFin.setVisible(true);
+    CalFin.setVisible(true);
+    KmFin.setVisible(true);
+    TiempoTFin.setVisible(true);
+    Resultados.setVisible(true);
+    UVueltasFin.setVisible(true);
+    UIncPromFin.setVisible(true);
+    UVelProm.setVisible(true);
+    UCalFin.setVisible(true);
+    UKmFin.setVisible(true);
+    UTiempoTFin.setVisible(true);
+    }
+    
+    public void calcularFinales(String vueltas,String cal)
+    {
+    String temp = vueltas;
+    String CalTemp = cal;
+    programa.promedios();
+    UVueltasFin.setText(temp);
+    UIncPromFin.setText(""+programa.getPromInc());
+    UVelProm.setText(""+programa.getPromVel());
+    UKmFin.setText(programa.getDistAcumStringFin());
+    UTiempoTFin.setText(reloj.calcularTiempoTranscurrido());
+    UCalFin.setText(CalTemp);
     }
 
     public void calculos() {
@@ -133,8 +187,10 @@ public class ActualizarMetricas implements Runnable {
                     {
                         if (botonM == "stop") {
 //                            System.out.println("usaron stop");
-                            Float velrafa = programa.getVel(); //toma la velocidad                            
-                            queriBD.AgregarBD(Float.parseFloat(kmAcum), Float.parseFloat(calSeg), Float.parseFloat(kmAcum)/0.04f, velrafa);
+                            calcularFinales(vueltas,calSeg);
+                            mostrar();
+                            queriBD.AgregarBD(programa.getVuelta(),programa.getPromInc(),programa.getPromVel(),programa.getCal(),programa.getKm(),
+                                   reloj.getTiempoTranscurrido());
                             programa.resetCalorias();
                             programa.resetKm();
                             programa.resetVuelta();
@@ -148,8 +204,10 @@ public class ActualizarMetricas implements Runnable {
                 }
                 
                 if (programa.getEstadoPrest() == "stop") {
-                    Float velrafa = programa.getVel(); //toma la velocidad                            
-                    queriBD.AgregarBD(Float.parseFloat(kmAcum), Float.parseFloat(calSeg), Float.parseFloat(kmAcum)/0.04f, velrafa);
+                    calcularFinales(vueltas,calSeg);
+                    mostrar();
+                    queriBD.AgregarBD(programa.getVuelta()-1,programa.getPromInc(),programa.getPromVel(),programa.getCal(),programa.getKm(),
+                                   reloj.getTiempoTranscurrido());
                     programa.resetCalorias();
                     programa.resetKm();
                     programa.resetVuelta();

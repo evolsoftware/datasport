@@ -10,6 +10,6 @@ limSupInc,6
 limInfInc,0.0
 increInc,0.2
 increVel,0.1
-distVuelta,100
+distVuelta,10
 
 

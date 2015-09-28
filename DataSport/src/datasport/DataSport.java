@@ -28,7 +28,7 @@ public class DataSport {
      idAtributo=0:Velocidad, 1:Inclinacion
      */
 
-    private float vel, inc, cal, calAcum, K, distanciaAcum, peso;
+    private float vel, inc, cal, calAcum, K, distanciaAcum, peso,promVel,promInc,km;
     private int vuelta, modo, distVuelta, edad;
     //private int intervalo
     private Programa progPrest;
@@ -69,7 +69,50 @@ public class DataSport {
     public void setEstadoPrest(String estadoPrest) {
         this.estadoPrest = estadoPrest;
     }
+    
+    //reseteamos los arreglos sobreescribiendo con objetos nuevos
+    public void resetArray()
+    {
+        for (float n : velArray)
+        {
+        n = 0;
+        }  
+        for (float n : incArray)
+        {
+        inc = 0;
+        }
+    }
+    
+    /*
+    permite calcular los promedios y devolver el valor como un entero
+    */
+    public void promedios()
+    {
+        float suma=0;
+    for (Float n:velArray)
+    {
+    suma=suma+n;
+    }
+    promVel=(suma)/velArray.size();
+    suma=0;
+    for (Float n:incArray)
+    {
+    suma=suma+n;
+    }
+    promInc=(suma)/incArray.size();
+    }
 
+    public float getPromVel() {
+        return promVel;
+    }
+
+    public float getPromInc() {
+        return promInc;
+    }
+    
+    
+    
+    
     public void setProgPrest(Programa progPrest) {
         this.progPrest = progPrest;
     }
@@ -319,6 +362,7 @@ public class DataSport {
         }
     }
 
+    
     public void calcularVuelta() {
         float distanciaM = distanciaAcum * 1000; //pasa la distancia metros
 
@@ -377,6 +421,19 @@ public class DataSport {
         String kms = "      " + formateador.format(km);
         return kms;
 
+    }
+    
+    public String getDistAcumStringFin() {
+
+        DecimalFormat formateador = new DecimalFormat("00.00", simbolos);
+        km = (float) Math.rint(distanciaAcum * 100) / 100;
+        String kms = "" + formateador.format(km);
+        return kms;
+
+    }
+
+    public float getKm() {
+        return km;
     }
 
 }

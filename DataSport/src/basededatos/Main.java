@@ -13,7 +13,7 @@ public class Main {
     
     public static void main(String [] args){
     Queries q = new Queries();
-    q.AgregarBD(111, 200,300,400);
+    
     }
     
 }

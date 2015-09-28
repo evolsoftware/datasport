@@ -13,6 +13,7 @@ import datasport.Lectora;
 import datasport.Programa;
 import datasport.Vuelta;
 import java.util.ArrayList;
+import basededatos.Queries;
 
 /**
  *
@@ -32,6 +33,7 @@ public class ipre extends javax.swing.JFrame {
     private String boton = "";
     private long intervaloCalculoCalorias, intervaloMostrarPantallaCal;
     private Programa progPrest2, progPrest0, progPrest1;
+    private Queries q;
 
     //Datos que se obtienen del txt 
     private Lectora leer;
@@ -43,6 +45,9 @@ public class ipre extends javax.swing.JFrame {
      */
     public ipre() {
         initComponents();
+        q = new Queries();
+        q.crearTabla();
+        esconder();
         inicializarDatosLectora();
         inicializar();
         cambio();
@@ -58,8 +63,30 @@ public class ipre extends javax.swing.JFrame {
 //        inicializarHilosRunnables();
         modo = 0;
 
+        actualizadorMetricas.llevarEtiquetas(VueltasFin, IncPromFin, VelPromFin, 
+                CalFin, KmFin, TiempoTFin, Resultados, UVueltasFin, UIncPromFin, 
+                UVelProm, UCalFin, UKmFin, UTiempoTFin , lblConsola);
     }
-
+ /*
+    Esconde los elementos que se muestran al terminar las sesiones
+    */
+    public void esconder()
+    {
+    VueltasFin.setVisible(false);
+    IncPromFin.setVisible(false);
+    VelPromFin.setVisible(false);
+    CalFin.setVisible(false);
+    KmFin.setVisible(false);
+    TiempoTFin.setVisible(false);
+    Resultados.setVisible(false);
+    UVueltasFin.setVisible(false);
+    UIncPromFin.setVisible(false);
+    UVelProm.setVisible(false);
+    UCalFin.setVisible(false);
+    UKmFin.setVisible(false);
+    UTiempoTFin.setVisible(false);
+    }
+    
     //datos a partir del txt
     public void inicializarDatosLectora() {
         leer = new Lectora("D:\\datasport\\DataSport\\src\\datasport\\config.txt");
@@ -195,6 +222,19 @@ public class ipre extends javax.swing.JFrame {
         lblConsola = new javax.swing.JLabel();
         lblVueltaFijo = new javax.swing.JLabel();
         lblTiempoFijo = new javax.swing.JLabel();
+        Resultados = new javax.swing.JLabel();
+        VueltasFin = new javax.swing.JLabel();
+        VelPromFin = new javax.swing.JLabel();
+        CalFin = new javax.swing.JLabel();
+        KmFin = new javax.swing.JLabel();
+        TiempoTFin = new javax.swing.JLabel();
+        IncPromFin = new javax.swing.JLabel();
+        UVueltasFin = new javax.swing.JLabel();
+        UIncPromFin = new javax.swing.JLabel();
+        UVelProm = new javax.swing.JLabel();
+        UCalFin = new javax.swing.JLabel();
+        UKmFin = new javax.swing.JLabel();
+        UTiempoTFin = new javax.swing.JLabel();
         bttPlay = new javax.swing.JButton();
         bttPause = new javax.swing.JButton();
         bttStop = new javax.swing.JButton();
@@ -597,7 +637,7 @@ public class ipre extends javax.swing.JFrame {
         lblConsola.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
         lblConsola.setForeground(new java.awt.Color(51, 51, 60));
         lblConsola.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        panelPpal.add(lblConsola, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 200, 130));
+        panelPpal.add(lblConsola, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 720, 130));
 
         lblVueltaFijo.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
         lblVueltaFijo.setForeground(new java.awt.Color(51, 51, 60));
@@ -610,6 +650,58 @@ public class ipre extends javax.swing.JFrame {
         lblTiempoFijo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTiempoFijo.setText("Tiempo Transcurrido");
         panelPpal.add(lblTiempoFijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
+
+        Resultados.setFont(new java.awt.Font("Papyrus", 0, 36)); // NOI18N
+        Resultados.setText("Resultados");
+        panelPpal.add(Resultados, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, -1, 40));
+
+        VueltasFin.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        VueltasFin.setText("Vueltas");
+        panelPpal.add(VueltasFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, -1, -1));
+
+        VelPromFin.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        VelPromFin.setText("Velocidad Promedio");
+        panelPpal.add(VelPromFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
+
+        CalFin.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        CalFin.setText("Calorias quemadas");
+        panelPpal.add(CalFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, -1, -1));
+
+        KmFin.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        KmFin.setText("Kilometros recorridos");
+        panelPpal.add(KmFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 310, -1, -1));
+
+        TiempoTFin.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        TiempoTFin.setText("Tiempo total");
+        panelPpal.add(TiempoTFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, -1, -1));
+
+        IncPromFin.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        IncPromFin.setText("Inclinacion Promedio");
+        panelPpal.add(IncPromFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, -1, -1));
+
+        UVueltasFin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        UVueltasFin.setText("0");
+        panelPpal.add(UVueltasFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, -1, -1));
+
+        UIncPromFin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        UIncPromFin.setText("0.0");
+        panelPpal.add(UIncPromFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, -1, -1));
+
+        UVelProm.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        UVelProm.setText("0.0");
+        panelPpal.add(UVelProm, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 350, -1, -1));
+
+        UCalFin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        UCalFin.setText("00000.00");
+        panelPpal.add(UCalFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 280, -1, -1));
+
+        UKmFin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        UKmFin.setText("0");
+        panelPpal.add(UKmFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 320, -1, -1));
+
+        UTiempoTFin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        UTiempoTFin.setText("00:00:00");
+        panelPpal.add(UTiempoTFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 360, -1, -1));
 
         bttPlay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/play.png"))); // NOI18N
         bttPlay.setBorder(null);
@@ -658,6 +750,11 @@ public class ipre extends javax.swing.JFrame {
         bttStop.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bttStopMouseClicked(evt);
+            }
+        });
+        bttStop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bttStopActionPerformed(evt);
             }
         });
 
@@ -891,6 +988,11 @@ public class ipre extends javax.swing.JFrame {
         bttOff.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bttOffMouseClicked(evt);
+            }
+        });
+        bttOff.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bttOffActionPerformed(evt);
             }
         });
 
@@ -1193,11 +1295,17 @@ public class ipre extends javax.swing.JFrame {
                 lblNoVuelta, lblVel, lblInc, reloj, sesion, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
         hiloMetricas = new Thread(actualizadorMetricas, "hiloMetricas");
         hiloMetricas.start();
+        actualizadorMetricas.llevarEtiquetas(VueltasFin, IncPromFin, VelPromFin, 
+                CalFin, KmFin, TiempoTFin, Resultados, UVueltasFin, UIncPromFin, 
+                UVelProm, UCalFin, UKmFin, UTiempoTFin, lblConsola);
 
 //        inicializarHilosRunnables();
 
         modo = 1;
         cambio();
+        esconder();
+        sesion.resetArray();
+        
 
 
     }//GEN-LAST:event_bttSpeedMouseClicked
@@ -1209,12 +1317,16 @@ public class ipre extends javax.swing.JFrame {
     private void bttStopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttStopMouseClicked
         actualizadorReloj.setBoton("stop");
         actualizadorMetricas.setBoton("stop");
-
+        esconder();
+        sesion.resetArray();
         // TODO add your handling code here:
     }//GEN-LAST:event_bttStopMouseClicked
 
     private void bttOffMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttOffMouseClicked
+
+        q.eliminarTabla();
         System.exit(0);
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_bttOffMouseClicked
 
@@ -1229,12 +1341,19 @@ public class ipre extends javax.swing.JFrame {
                 lblConsola.setText(texto);
             } else {
                 texto = "<html><body>Modo Libre<br>En<br>Ejecución</body></html>";
+                esconder();
+                sesion.resetArray();
+                
                 lblConsola.setText(texto);
                 actualizadorReloj.setBoton("play");
                 actualizadorMetricas.setBoton("play");
             }
         } else {
             texto = "<html><body>Modo Prestablecido<br>En<br>Ejecución</body></html>";
+        
+            esconder();
+            sesion.resetArray();
+            
             lblConsola.setText(texto);
             actualizadorMetricas.setBoton("play");
             actualizadorReloj.setBoton("play");
@@ -1284,6 +1403,14 @@ public class ipre extends javax.swing.JFrame {
     private void bttPauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttPauseActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bttPauseActionPerformed
+
+    private void bttStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttStopActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bttStopActionPerformed
+
+    private void bttOffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttOffActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bttOffActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1336,6 +1463,19 @@ public class ipre extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel CalFin;
+    private javax.swing.JLabel IncPromFin;
+    private javax.swing.JLabel KmFin;
+    private javax.swing.JLabel Resultados;
+    private javax.swing.JLabel TiempoTFin;
+    private javax.swing.JLabel UCalFin;
+    private javax.swing.JLabel UIncPromFin;
+    private javax.swing.JLabel UKmFin;
+    private javax.swing.JLabel UTiempoTFin;
+    private javax.swing.JLabel UVelProm;
+    private javax.swing.JLabel UVueltasFin;
+    private javax.swing.JLabel VelPromFin;
+    private javax.swing.JLabel VueltasFin;
     private javax.swing.JButton bttInc0;
     private javax.swing.JButton bttInc1;
     private javax.swing.JButton bttInc2;
